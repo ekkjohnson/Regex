@@ -33,14 +33,44 @@ Grouping constructs delineate the subexpressions of a regex and capture the subs
 
 ### Bracket Expressions
 
+Bracket expressions are either matching list or non-matching list expressions. Brackets indicate a set of characters to match. In our example, bracked expressions for email validation include the character sets of [a-z0-9_\.-], which is matching any letter a-z and is case senstive. It also matches a character 0-9 and matches the characters "_" , "-" , and "."; [\da-z\.-], which is matching a single digit from 0-9, any character a-z (case senstive), and the characters "." and "-".; [a-z\.] matches any character a-z(case senstive) and the character ".".
+
 ### Character Classes
+
+Character classes tell the regex engine to match one of several specific characters. These can include digits, words, or whitespace. 
+
+A list of character classes:
+"." which represents any character except characters on a new line
+"\w" repesents words
+"\W" represents not words
+"\d" represents digits
+"\D" represents not digits
+"\s" represents whitespace
+"\S" represents not whitespace
+"[abc]" represents a,b, or c
+"[^abc]" represents not a,b, or c
+"[a-z]" represents character between a and z In the expression /^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/ character classes a-z and "\d" are used. This means that a letter a to z and a digit from 0 to 9 can be in the string.
 
 ### The OR Operator
 
+The "OR" operator "|" allows there to be a choice in matching where the expression matches before or after is acceptable. In this example for matching an email, there is no "OR" operator.
+
 ### Flags
+
+Flags "/" are optional parameters that we can add to a plain expression to make it search in a different way. Each flag is denoted by a single alphabetic character, and serves different purposes in modifying the expression's searching behavior.
+
+"i" says to ingore capital casing so that "A" and "a" are considered the same when searching.
+"g" looks for all matches when there is a search.
+"m" affects "^" and "$" behavior across multiple lines when searching.
+"s" enables "dotall" to match newline character. Flags were not used in this email regex.
+
 
 ### Character Escapes
 
+Character Escape "\" is known as the escape code and restores the original literal meaning of the following character. 
+
+
 ## Author
 
+Hi, I'm Elizabeth Kissner Johnson and I am a fullstack webdeveloper. 
 You can check out my other projects at https://github.com/ekkjohnson. Or contact me at ekkjohnson@gmail.com.
